@@ -9,6 +9,9 @@ If you complete upper task you'll write code
 ...
 ```
 
+## Example
+[Example Code](https://github.com/WonhyeokKim/led_control/blob/master/example/main.ino)
+
 ## Documentation
 This is default code
 ```c
