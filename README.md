@@ -24,8 +24,11 @@ void loop() {
   led.led_off();
 }
 ```
-- led_on();
+- LedControl(pin)<br/>
+This is define led pin class. If you wanna define pin, you'll input class instance in number.
+
+- led_on()<br/>
 This is turn on led pin.
 
-- led_off();
+- led_off()<br/>
 This is turn off led pin.
