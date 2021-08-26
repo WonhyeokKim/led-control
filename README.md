@@ -2,7 +2,7 @@
 This is arduino led control library
 
 ## How to use this library
-Unzip realese file and put in unziped folder `%USERPROFILE%\Document\Arduino\libraries\`.<br/>
+Unzip realese file and put in unziped folder `%USERPROFILE%\Documents\Arduino\libraries\`.<br/>
 If you complete upper task you'll write code
 ```c
 #include <led_control.h>
