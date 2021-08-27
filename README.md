@@ -13,7 +13,7 @@ If you complete upper task you'll write code
 [Example Code](https://github.com/WonhyeokKim/led_control/blob/master/example/main.ino)
 
 ## Documentation
-This is default code
+### This is default using code
 ```c
 #include <led_control.h>
 
@@ -35,3 +35,31 @@ This is turn on led pin.
 
 - led_off()<br/>
 This is turn off led pin.
+
+### Spectrom code
+```c
+#include <led_control.h>
+
+#define START_PIN 7
+#define END_PIN 12
+
+#define BUTTON_0 2
+#define BUTTON_1 3
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  LedSpectrom led = LedSpectrom(START_PIN, END_PIN);
+  led.led_spectrom(BUTTON_0, 500, true);
+  led.led_spectrom(BUTTON_1, 500, false);
+}
+```
+
+- LedSpectrom(minimum_pin, maximum_pin)<br/>
+This is define led pin class. If you wanna define pin, you'll input class instance in number.
+but their included loop function. `minimum_pin..maximumpin`
+
+- led_spectrom(int button_pin, int delay, bool upper)<br/>
+This is turn on led with spectrom.
