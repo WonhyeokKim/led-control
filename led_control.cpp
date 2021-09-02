@@ -52,18 +52,31 @@ void LedSpectrom::led_spectrom(int button_pin, int delay_ms, bool upper) {
             for (int i = minimum_pin; maximum_pin >= i; i++) {
                 digitalWrite(i, 1);
                 delay(delay_ms);
+                
+                Serial.println(prefix + String(i) + ": Printing Spectrom! MODE: upper");
             }
+            
+            for (int i = minimum_pin; maximum_pin >= i; i++) {
+            	pinMode(i, OUTPUT);
+            	digitalWrite(i, 0);
+            
+            	Serial.println(prefix + "Off the spectrom");
+        	}
         } else {
             for (int i = maximum_pin; i >= minimum_pin; i--) {
                 pinMode(i, OUTPUT);
                 digitalWrite(i, 1);
                 delay(delay_ms);
+                
+                Serial.println(prefix + String(i) + ": Printing Spectrom! MODE: not upper");
             }
-        }
-    
-        for (int i = minimum_pin; maximum_pin >= i; i++) {
-            pinMode(i, OUTPUT);
-            digitalWrite(i, 0);
+            
+            for (int i = minimum_pin; i >= maximum_pin; i--) {
+            	pinMode(i, OUTPUT);
+            	digitalWrite(i, 0);
+            
+            	Serial.println(prefix + "Off the spectrom");
+        	}
         }
         
         delay(delay_ms);
